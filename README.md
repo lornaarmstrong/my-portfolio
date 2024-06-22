@@ -1,30 +1,22 @@
-# React + TypeScript + Vite
+# Lorna Armstrong - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repo holds the code for my professional portfolio - currently being worked on.
 
-Currently, two official plugins are available:
+## Aim
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The aim of this project is to design a website that can be used as my portfolio and also as a chance to strengthen my design and programming skills.
+It should provide:
 
-## Expanding the ESLint configuration
+- An introduction to me and my interests as a Software Engineer.
+- Detailed information about relevant projects.
+- An outline of my professional experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+I am also keen to apply knowledge of accessible design and human computer interaction and to challenge myself to improve further in my skillset.
 
-- Configure the top-level `parserOptions` property like this:
+## Wireframes and Design
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+For wireframing, I have used sketches drawn by hand which I then translated to more detailed designs using Figma.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Code and Implementation
+
+To create this portfolio, I am using React and TypeScript.
