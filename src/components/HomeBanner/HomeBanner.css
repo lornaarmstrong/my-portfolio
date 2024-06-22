@@ -1,0 +1,41 @@
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.bannerText {
+    height: 60vh;
+    background-color: #FDE4E4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: "60%";
+}
+
+.bannerName {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #cd6a35;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.leftColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rightColumn img {
+    max-width: 100%; /* Ensures the image fits within the column */
+    height: auto; /* Maintains the aspect ratio of the image */
+}
+
+.tagline {
+    font-size: 1.5rem;
+    padding: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #342831;
+}

@@ -1,8 +1,14 @@
 .header {
-    background-color: #3e3d58;
+    background-color: #ffffff;
     padding: 20px;
+    height: 110px;
     color: white;
     text-align: center;
+}
+
+.header nav {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .header nav ul {
@@ -16,6 +22,13 @@
 }
 
 .header nav ul li a {
-    color: white;
+    color: rgb(51, 78, 152);
     text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.header img {
+    float: left;
+    width: 200px;
 }
