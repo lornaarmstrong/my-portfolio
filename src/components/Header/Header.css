@@ -28,6 +28,10 @@
     text-transform: uppercase;
 }
 
+.header nav ul li a:hover {
+text-decoration: underline;
+}
+
 .header img {
     float: left;
     width: 200px;

@@ -1,0 +1,75 @@
+.project-section {
+    display: flex;
+    justify-content: space-between; /* Space out the boxes evenly */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px; /* Adjust based on your design */
+}
+  
+.project-block {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center-align items horizontally */
+    justify-content: center; /* Center-align items vertically */
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #ffffff;
+    text-align: center; /* Center text */
+    max-width: 500px; /* Adjust based on your design */
+}
+  
+.project-image {
+    width: 80%; /* Make the image responsive to the container width */
+    height: 250px; /* Fixed height for all images */
+    object-fit: contain; /* Ensures the image covers the area without distortion */
+    display: flex; /* Flex container for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    margin-bottom: 15px; /* Space between image and text */
+    overflow: hidden; /* Ensures overflow is hidden */
+}
+  
+.project-image img {
+    width: 100%; /* Scale image to fill container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Ensure image does not exceed container height */
+}
+  
+.project-block p {
+    margin: 0; /* Remove default margin */
+    padding: 0 10px; /* Add horizontal padding for text */
+}
+  
+.read-more-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px; /* Space between text and button */
+}
+  
+.read-more-btn:hover {
+    background-color: #0056b3;
+}
+
+.timeframe {
+    color: black;
+    font-size: 12pt;
+    font-weight: bold;
+    padding: 150px;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 18px;
+    padding: 20px;
+    margin: 10px;
+    f
+}

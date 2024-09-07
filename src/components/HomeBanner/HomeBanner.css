@@ -3,33 +3,36 @@
     flex-direction: column;
 }
 
-.bannerText {
+.bannerContainer {
+    padding: 40px;
     height: 60vh;
-    background-color: #FDE4E4;
+    max-width: 1200px; /* Adjust based on your design */
+    justify-content: space-between; /* Space out the boxes evenly */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: "60%";
+    margin: 20px auto;  /* Centre the div */
 }
+    
 
 .bannerName {
     font-size: 3rem;
     font-weight: bold;
-    color: #cd6a35;
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 0;
     padding-right: 0;
 }
 
-.leftColumn {
+.rightColumn {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.rightColumn img {
+.leftColumn img {
     max-width: 100%; /* Ensures the image fits within the column */
+    width: 4000px;
     height: auto; /* Maintains the aspect ratio of the image */
 }
 
@@ -38,4 +41,25 @@
     padding: 10px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #342831;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; /* space between buttons */
+    padding: 20px
+}
+  
+.social-button {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+  
+.social-logo {
+    width: 40px;
+    height: 40px;
 }
