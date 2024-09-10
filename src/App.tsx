@@ -1,21 +1,19 @@
+import React, { useState } from "react";
+
 import Header from "./components/Header/Header";
 import HomeBanner from "./components/HomeBanner/HomeBanner";
 import ContentBlock from "./components/ContentBlock/ContentBlock";
 import ExperienceBlock from "./components/ExperienceBlock/ExperienceBlock";
 import ProjectBlock from "./components/ProjectBlock/ProjectBlock";
 import Footer from "./components/Footer/Footer";
+import Modal from "./components/Modal/Modal";
 import "./App.css";
 
 // Importing images
 import image1 from "./assets/images/university_of_edinburgh.png";
 import image2 from "./assets/images/Google.png";
 import image3 from "./assets/images/Microsoft.png";
-import dissertation from "./assets/images/diss-chart.png";
-import rodistro from "./assets/images/rodistro.jpg";
-
-// Variables
-const introduction =
-  "Hi, I'm Lorna! I an an enthusiastic, technical and ambitious Software Engineer, with a particular interest in solving hard problems and collaborating with great people. I have a BSc in Computer Science from the University of Edinburgh.";
+import laptop from "./assets/images/laptop.png";
 
 const experienceData = [
   {
@@ -52,22 +50,40 @@ const projectData = [
   {
     id: 1,
     title: "Academic Research - Machine Translation",
-    imgSrc: dissertation,
-    timeframe: "Sept 2021 - Apr 2022",
+    imgSrc: laptop,
     description:
       "Generalisability of Multilingual Models in Translation of Low Resource Languages",
+    technology_used: ["PyTorch", "Hugging Face", "TensorFlow"],
   },
   {
     id: 2,
-    title: "System Design Project - Assistive Robot",
-    imgSrc: rodistro,
-    timeframe: "Sept 2021 - May 2022",
+    title: "Assistive Robot System Design",
+    imgSrc: laptop,
     description:
       "Created an assistive robot, Rodistro, to automate menial tasks within a hospital environment.",
+    award: "🏆 Won KAL Commendation Award First Prize",
+    technology_used: ["Python", "Figma", "Autodesk CAD"],
+  },
+  {
+    id: 3,
+    title: "Informatics Large Practical",
+    imgSrc: laptop,
+    description: "Autonomous Drone Sensor Mapping",
+    technology_used: ["Java", "GeoJSON", "Maven", "HTTP Client"],
   },
 ];
 
-const ExperienceSection: React.FC = () => {
+interface ExperienceSectionProps {
+  onOpenModal: () => void;
+  isModalOpen: boolean;
+  onCloseModal: () => void;
+}
+
+const ExperienceSection: React.FC<ExperienceSectionProps> = ({
+  onOpenModal,
+  isModalOpen,
+  onCloseModal,
+}) => {
   return (
     <div className="experience-section">
       {experienceData.map((exp) => (
@@ -76,13 +92,14 @@ const ExperienceSection: React.FC = () => {
           imgSrc={exp.imgSrc}
           timeframe={exp.timeframe}
           description={exp.description}
+          onOpenModal={onOpenModal}
         />
       ))}
     </div>
   );
 };
 
-const ProjectSection: React.FC = () => {
+const ProjectSection: React.FC = ({}) => {
   return (
     <div className="project-section">
       {projectData.map((exp) => (
@@ -90,8 +107,9 @@ const ProjectSection: React.FC = () => {
           key={exp.id}
           title={exp.title}
           imgSrc={exp.imgSrc}
-          timeframe={exp.timeframe}
           description={exp.description}
+          award={exp.award}
+          technology_used={exp.technology_used}
         />
       ))}
     </div>
@@ -99,6 +117,16 @@ const ProjectSection: React.FC = () => {
 };
 
 function App() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <div className="App">
       <Header />
@@ -106,7 +134,13 @@ function App() {
       <ContentBlock
         id="experience"
         header={"Experience"}
-        paragraph={<ExperienceSection />}
+        paragraph={
+          <ExperienceSection
+            onOpenModal={handleOpenModal}
+            isModalOpen={isModalOpen}
+            onCloseModal={handleCloseModal}
+          />
+        }
       />
       <ContentBlock
         id="projects"
@@ -114,6 +148,7 @@ function App() {
         paragraph={<ProjectSection />}
       />
       <Footer />
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 }

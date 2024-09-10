@@ -5,23 +5,31 @@ import "./ProjectBlock.css";
 type ProjectBlockProps = {
   imgSrc: string;
   title: string;
-  timeframe: string;
   description: string;
+  award?: string;
+  technology_used: string[];
 };
 
 const ProjectBlock: React.FC<ProjectBlockProps> = ({
   imgSrc,
   title,
-  timeframe,
   description,
+  award,
+  technology_used,
 }) => {
   return (
     <div className="project-block">
-      <img src={imgSrc} alt="Project Image" className="project-image" />
-      <p className="title">Project: {title}</p>
-      <p className="timeframe">{timeframe}</p>
+      <p className="title">{title}</p>
       <p>{description}</p>
-      <button className="read-more-btn">Read More</button>
+      <p className="award">{award}</p>
+      <div className="technology-list">
+        {technology_used.map((tech, index) => (
+          <span key={index} className="technology-item">
+            {tech}
+          </span>
+        ))}
+      </div>
+      <button className="read-more-btn">Find Out More</button>
     </div>
   );
 };

@@ -20,6 +20,7 @@
     background-color: #ffffff;
     text-align: center; /* Center text */
     max-width: 500px; /* Adjust based on your design */
+    height: 350px;
 }
   
 .project-image {
@@ -71,5 +72,31 @@
     font-size: 18px;
     padding: 20px;
     margin: 10px;
-    f
 }
+
+/* Styles for the list of technologies */
+.technology-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Adds space between items */
+    margin-top: 20px;
+  }
+  
+  /* Styles for each individual technology item */
+  .technology-item {
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px 10px;
+    border: 1px solid #ff6a00; /* Outline color */
+    border-radius: 6px; /* Rounded corners */
+    background-color: #fae7db; /* Background color for items */
+    font-size: 1rem;
+    color: #333;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .award {
+    font-size: 13px;
+  }
