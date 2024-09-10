@@ -9,48 +9,51 @@ import Footer from "./components/Footer/Footer";
 import Modal from "./components/Modal/Modal";
 import "./App.css";
 
-// Importing images
-import image1 from "./assets/images/university_of_edinburgh.png";
-import image2 from "./assets/images/Google.png";
-import image3 from "./assets/images/Microsoft.png";
-import laptop from "./assets/images/laptop.png";
+// Importing interfaces
+import { Experience, Project, ModalProps } from "./common/types";
 
-const experienceData = [
+// Importing images
+import uni_of_edi from "./assets/images/university_of_edinburgh.png";
+import google_logo from "./assets/images/Google.png";
+import microsoft_logo from "./assets/images/Microsoft.png";
+
+// List of Work Experiences
+const experienceData: Experience[] = [
   {
     id: 1,
-    imgSrc: image1,
+    imgSrc: uni_of_edi,
     timeframe: "Sept 2018 - July 2022",
     description:
       "Completed a BSc in Computer Science at the University of Edinburgh.",
   },
   {
     id: 2,
-    imgSrc: image2,
+    imgSrc: google_logo,
     timeframe: "July - Sept 2020",
     description:
       "Worked as a STEP (Student Technical Engineering Program) Intern at Google, in the Google Ads team.",
   },
   {
     id: 3,
-    imgSrc: image2,
+    imgSrc: google_logo,
     timeframe: "June - Sept 2021",
     description:
       "Worked as a Software Engineer Intern at Google, in the Security team for Fitbit.",
   },
   {
     id: 4,
-    imgSrc: image3,
+    imgSrc: microsoft_logo,
     timeframe: "Sept 2022 - Aug 2024",
     description:
       "Worked as a Software Engineer at Microsoft, within Azure for Operators, on telecommunication products.",
   },
 ];
 
-const projectData = [
+// List of Technical Projects
+const projectData: Project[] = [
   {
     id: 1,
     title: "Academic Research - Machine Translation",
-    imgSrc: laptop,
     description:
       "Generalisability of Multilingual Models in Translation of Low Resource Languages",
     technology_used: ["PyTorch", "Hugging Face", "TensorFlow"],
@@ -58,7 +61,6 @@ const projectData = [
   {
     id: 2,
     title: "Assistive Robot System Design",
-    imgSrc: laptop,
     description:
       "Created an assistive robot, Rodistro, to automate menial tasks within a hospital environment.",
     award: "🏆 Won KAL Commendation Award First Prize",
@@ -67,7 +69,6 @@ const projectData = [
   {
     id: 3,
     title: "Informatics Large Practical",
-    imgSrc: laptop,
     description: "Autonomous Drone Sensor Mapping",
     technology_used: ["Java", "GeoJSON", "Maven", "HTTP Client"],
   },
@@ -81,8 +82,6 @@ interface ExperienceSectionProps {
 
 const ExperienceSection: React.FC<ExperienceSectionProps> = ({
   onOpenModal,
-  isModalOpen,
-  onCloseModal,
 }) => {
   return (
     <div className="experience-section">
@@ -99,24 +98,23 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
   );
 };
 
-const ProjectSection: React.FC = ({}) => {
+const ProjectSection: React.FC = () => {
   return (
     <div className="project-section">
-      {projectData.map((exp) => (
+      {projectData.map((project) => (
         <ProjectBlock
-          key={exp.id}
-          title={exp.title}
-          imgSrc={exp.imgSrc}
-          description={exp.description}
-          award={exp.award}
-          technology_used={exp.technology_used}
+          key={project.id}
+          title={project.title}
+          description={project.description}
+          award={project.award}
+          technology_used={project.technology_used}
         />
       ))}
     </div>
   );
 };
 
-function App() {
+const App: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -134,7 +132,7 @@ function App() {
       <ContentBlock
         id="experience"
         header={"Experience"}
-        paragraph={
+        content={
           <ExperienceSection
             onOpenModal={handleOpenModal}
             isModalOpen={isModalOpen}
@@ -145,12 +143,12 @@ function App() {
       <ContentBlock
         id="projects"
         header={"Projects"}
-        paragraph={<ProjectSection />}
+        content={<ProjectSection />}
       />
       <Footer />
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
-}
+};
 
 export default App;

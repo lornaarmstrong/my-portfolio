@@ -11,7 +11,6 @@ type ExperienceBlockProps = {
 };
 
 const ExperienceBlock: React.FC<ExperienceBlockProps> = ({
-  key,
   imgSrc,
   timeframe,
   description,

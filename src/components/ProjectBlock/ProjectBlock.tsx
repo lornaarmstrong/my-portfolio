@@ -3,7 +3,6 @@ import "./ProjectBlock.css";
 
 // Define the props type for the ProjectBlock component
 type ProjectBlockProps = {
-  imgSrc: string;
   title: string;
   description: string;
   award?: string;
@@ -11,7 +10,6 @@ type ProjectBlockProps = {
 };
 
 const ProjectBlock: React.FC<ProjectBlockProps> = ({
-  imgSrc,
   title,
   description,
   award,

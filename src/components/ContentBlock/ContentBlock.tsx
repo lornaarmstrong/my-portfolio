@@ -3,18 +3,14 @@ import React from "react";
 type ContentBlockProps = {
   id?: string;
   header: string;
-  paragraph: React.ReactNode;
+  content: React.ReactNode;
 };
 
-const ContentBlock: React.FC<ContentBlockProps> = ({
-  id,
-  header,
-  paragraph,
-}) => {
+const ContentBlock: React.FC<ContentBlockProps> = ({ id, header, content }) => {
   return (
     <div id={id}>
       <h2>{header}</h2>
-      <p>{paragraph}</p>
+      <p>{content}</p>
     </div>
   );
 };
