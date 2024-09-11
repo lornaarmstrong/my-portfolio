@@ -7,13 +7,15 @@ type ExperienceBlockProps = {
   imgSrc: string;
   timeframe: string;
   description: string;
-  onOpenModal: () => void;
+  modalContent: React.ReactNode;
+  onOpenModal: (content: React.ReactNode) => void;
 };
 
 const ExperienceBlock: React.FC<ExperienceBlockProps> = ({
   imgSrc,
   timeframe,
   description,
+  modalContent,
   onOpenModal,
 }) => {
   return (
@@ -21,7 +23,10 @@ const ExperienceBlock: React.FC<ExperienceBlockProps> = ({
       <img src={imgSrc} alt="Experience Image" className="experience-image" />
       <p className="timeframe">{timeframe}</p>
       <p>{description}</p>
-      <button className="read-more-btn" onClick={onOpenModal}>
+      <button
+        className="read-more-btn"
+        onClick={() => onOpenModal(modalContent)}
+      >
         Read More
       </button>
     </div>

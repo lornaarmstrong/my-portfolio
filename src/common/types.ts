@@ -6,6 +6,7 @@ export interface Experience {
     imgSrc: string;
     timeframe: string;
     description: string;
+    modalContent: React.ReactNode;
   }
 
 // Contains data for a Technical Project

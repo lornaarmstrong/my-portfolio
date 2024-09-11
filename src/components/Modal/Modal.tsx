@@ -4,19 +4,19 @@ import "./Modal.css";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
+  children: React.ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null; // If the modal is not open, don't render it.
 
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2>More Information</h2>
-        <p>This is the popup modal content. Add any text or components here.</p>
-        <button onClick={onClose} className="modal-button">
-          Close
+        <button onClick={onClose} className="modal-close-button">
+          &times;
         </button>
+        {children}
       </div>
     </div>
   );
