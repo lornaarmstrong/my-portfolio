@@ -3,12 +3,13 @@ import "./HomeBanner.css";
 
 import github from "../../assets/images/github-logo.png";
 import linkedIn from "../../assets/images/linkedin_logo.png";
+import profile from "../../assets/images/profile.png";
 
 const HomeBanner: React.FC = () => {
   return (
     <div className="bannerContainer">
       <div className="leftColumn">
-        <img src="src/assets/images/profile.png" alt="Laptop" width="800px" />
+        <img src={profile} alt="Profile Images" width="800px" />
       </div>
       <div className="rightColumn">
         <h1 className="bannerName">Hello, I'm Lorna Armstrong</h1>
