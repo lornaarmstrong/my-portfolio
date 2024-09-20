@@ -14,11 +14,10 @@ export const EdinburghModalContent = () => (
         Edinburgh, from September 2018 to May 2022. This was the start of my
         Software Engineering journey. I was able to take advantage of the
         quality academic teaching, opportunity to explore topics independently,
-        and to sign up to various societies to enrichen my experience. I learnt
-        new skills - through Swing Dance Society, and Ballroom Society. I
-        fostered a keen interest in languages by joining Linguistics Society. I
-        also took part in societies more closely related to my degree - Women in
-        STEM Society, HOPPERS Society, and CompSoc Society.
+        and to sign up to various societies to enrichen my experience. I also
+        took part in various tech societies - Women in STEM Society, HOPPERS
+        Society, and CompSoc Society - and additional societies for new skills,
+        including Linguistics, Swing Dance and Ballroom societies.
       </p>
     </div>
     <div className="modal-header">Modules Taken</div>
