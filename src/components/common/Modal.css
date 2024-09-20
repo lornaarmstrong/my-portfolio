@@ -58,26 +58,26 @@
   color: #666;
 }
 
-.modal-main {
+.modal-main-edu {
   display: grid;
   grid-template-columns: 30% 70%;
   gap: 20px;
   padding: 10px;
 }
 
-.modal-main img {
+.modal-main-edu img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-.modal-body {
+.modal-body-edu {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.modal-body .column {
+.modal-body-edu .column {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -85,7 +85,7 @@
   padding-right: 10px;
 }
 
-.modal-body .column img {
+.modal-body-edu .column img {
   align-self: center;
   vertical-align: middle;
   width: 80%;
@@ -109,4 +109,57 @@ p .degree {
 
 .award_list_item {
   padding: 10px;
+}
+
+.modal-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.modal-two-columns {
+  display: flex;
+  justify-content: space-between; /* Add space between columns */
+  gap: 20px; /* Optional: Add space between columns */
+}
+
+.left-column {
+  width: 60%; /* 60% width for left column */
+}
+
+.left-column img {
+  width: 80%;
+  max-width: 300px;
+}
+.experience-description {
+  text-align: left;
+}
+
+.team-descriptor {
+  text-align: left;
+}
+
+.right-column {
+  width: 40%; /* 40% width for right column */
+}
+
+/* Optional: Style for the list in the right column */
+.right-column ul {
+  padding-left: 50px;
+}
+
+.right-column ul li {
+  border-radius: 4px;
+}
+
+/* Optional: Make it responsive on smaller screens */
+@media (max-width: 768px) {
+  .modal-two-columns {
+    flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%; /* Full width on small screens */
+  }
 }
